@@ -1,187 +1,63 @@
-## Contributing
 
-First off, thank you for considering contributing to Active Admin. It's people
-like you that make Active Admin such a great tool.
+# 기여자 행동 강령 규약
 
-### Where do I go from here?
+## 서약
 
-If you've noticed a bug or have a feature request, [make one][new issue]! It's
-generally best if you get confirmation of your bug or approval for your feature
-request this way before starting to code.
+개방적이고 친근한 환경 조성을 위해, 기여자와 유지자는 프로젝트와 커뮤니티에서
+연령, 신체 크기, 장애, 민족성, 성 정체성과 표현, 경력, 국적, 외모, 인종, 종교
+또는 성적 정체성과 지향에 관계없이 모두에게 차별없이 참여할 것을 서약합니다.
 
-If you have a general question about activeadmin, you can post it on [Stack
-Overflow], the issue tracker is only for bugs and feature requests.
+## 표준
 
-### Fork & create a branch
+긍정적인 환경을 조성하기 위해 기여자가 해야 할 행동은 다음과 같습니다:
 
-If this is something you think you can fix, then [fork Active Admin] and create
-a branch with a descriptive name.
+* 소외하지 않고 배려하는 언어 사용
+* 서로 다른 경험과 관점 존중
+* 열린 마음으로 건설적인 비판을 수용
+* 커뮤니티에 가장 최선이 무엇인지에 주력
+* 다른 커뮤니티 구성원들에 대한 공감 표현
 
-A good branch name would be (where issue #325 is the ticket you're working on):
+하지말아야 할 행동은 다음과 같습니다:
 
-```sh
-git checkout -b 325-add-japanese-translations
-```
+* 성적인 언어와 이미지 사용, 원치않는 성적 관심이나 접근
+* 소모적인 논쟁, 모욕적이거나 비하하는 댓글과 개인적 또는 정치적인 공격
+* 공개적이거나 개인적인 괴롭힘
+* 동의없는 집주소 또는 전자주소 등의 개인 정보의 공개
+* 부적절한 것으로 간주될 수 있는 다른 행위
 
-### Get the test suite running
+## 책임
 
-Make sure you're using a recent Ruby version.
+프로젝트 유지자는 허용되는 행동의 기준을 명확히 해야할 책임이 있습니다. 또한,
+하지말아야 할 행동에 대해 적당하고 공정한 시정 조치를 취할 것 입니다.
 
-You'll also need chrome installed in order to run cucumber scenarios.
+프로젝트 유지자는 이 행동 강령을 따르지 않은 댓글, 커밋, 코드, 위키 편집,
+이슈와 그 외 다른 기여를 삭제, 수정 또는 거부할 권리와 책임이 있습니다. 또한,
+부적당하거나 험악하거나 공격적이거나 해롭다고 생각하는 다른 행동을 한 기여자를
+일시적 또는 영구적으로 퇴장시킬 수 있습니다.
 
-Now install the development dependencies:
+## 범위
 
-```sh
-bundle install
-```
+이 행동 강령은 프로젝트 영역에 적용되며, 프로젝트 또는 커뮤니티를 대표할 경우
+공개 영역에도 적용됩니다. 프로젝트 또는 커뮤니티 대표의 예로는 공식 프로젝트
+이메일 주소, 공식 소셜 미디어 계정사용 또는 온/오프라인 이벤트에서 임명된
+대표자의 활동이 있습니다. 프로젝트의 대표는 프로젝트 유지자에 의해 더 정의되고
+명확히 될 것 입니다.
 
-Then install javascript dependencies with [Yarn] (requires a current version of [Node.js]):
+## 강제
 
-```sh
-bin/yarn install
-```
+모욕적인, 괴롭힘 또는 기타 하지말아야 할 행동을 발견하면 [EMAIL 주소 입력] 을
+통해 프로젝트 팀에 보고 해 주세요. 모든 불만사항은 검토하고 조사한 뒤 상황에
+따라 필요하고 적절하다고 생각되는 응답을 할 것 입니다. 프로젝트 팀은 사건의
+보고자와 관련한 비밀을 유지할 의무가 있습니다. 구체적인 시행 정책의 자세한
+사항은 별도로 게시할 수 있습니다.
 
-JS assets are located in `app/javascript/active_admin`. The config will take care of compiling a complete bundle with [Rollup] using the `build` script and exported to `app/assets/javascripts/active_admin/base.js` ready to be used by Sprockets.
+행동 강령을 따르지 않거나 강제하지 않은 프로젝트 유지자는 프로젝트 리더의 다른
+구성원의 결정에 따라 일시적 또는 영구적인 제재를 받을 수 있습니다.
 
-To update javascript bundle run (add `-w` flag for watch mode):
+## 참고
 
-```sh
-bin/yarn build
-```
+이 행동 강령은 [기여자 규약][homepage] 의 1.4 버전을 변형하였습니다. 그 내용은
+https://www.contributor-covenant.org/ko/version/1/4/code-of-conduct.html 에서
+확인할 수 있습니다.
 
-Now you should be able to run the entire suite using:
-
-```sh
-bin/rake
-```
-
-The task will generate a sample Rails application in `tmp/test_apps` to run the
-test suite against.
-
-If you want to test against a Rails version different from the latest, make sure
-you use the correct Gemfile, for example:
-
-```sh
-export BUNDLE_GEMFILE=gemfiles/rails_61/Gemfile
-```
-
-**Warning** SCSS assets are aimed to be used indifferently with Sprockets **and** webpacker.
-As such, make sure not to use any sass-rails directives such as `asset-url` or `image-url`.
-
-### Implement your fix or feature
-
-At this point, you're ready to make your changes! Feel free to ask for help;
-everyone is a beginner at first :smile_cat:
-
-### View your changes in a Rails application
-
-Active Admin is meant to be used by humans, not cucumbers. So make sure to take
-a look at your changes in a browser.
-
-To boot up a test Rails app:
-
-```sh
-bin/rake local server
-```
-
-This will automatically create a Rails app if none already exists, and store it
-in the `tmp/development_apps` folder.
-
-You should now be able to open <http://localhost:3000/admin> in your browser.
-You can log in using:
-
-*User*: admin@example.com
-*Password*: password
-
-If you need to perform any other commands on the test application, just pass
-them to the `local` rake task. For example, to boot the rails console:
-
-```sh
-bin/rake local console
-```
-
-Or to migrate the database, if you create a new migration or just play around
-with the db:
-
-```sh
-bin/rake local db:migrate
-```
-
-### Make a Pull Request
-
-At this point, you should switch back to your master branch and make sure it's
-up to date with Active Admin's master branch:
-
-```sh
-git remote add upstream git@github.com:activeadmin/activeadmin.git
-git checkout master
-git pull upstream master
-```
-
-Then update your feature branch from your local copy of master, and push it!
-
-```sh
-git checkout 325-add-japanese-translations
-git rebase master
-git push --set-upstream origin 325-add-japanese-translations
-```
-
-Finally, go to GitHub and [make a Pull Request][] :D
-
-Github Actions will run our test suite against all supported Rails versions. We
-care about quality, so your PR won't be merged until all tests pass. It's
-unlikely, but it's possible that your changes pass tests in one Rails version
-but fail in another. In that case, you'll have to setup your development
-environment (as explained in step 3) to use the problematic Rails version, and
-investigate what's going on!
-
-### Keeping your Pull Request updated
-
-If a maintainer asks you to "rebase" your PR, they're saying that a lot of code
-has changed, and that you need to update your branch so it's easier to merge.
-
-To learn more about rebasing in Git, there are a lot of [good][git rebasing]
-[resources][interactive rebase] but here's the suggested workflow:
-
-```sh
-git checkout 325-add-japanese-translations
-git pull --rebase upstream master
-git push --force-with-lease 325-add-japanese-translations
-```
-
-### Merging a PR (maintainers only)
-
-A PR can only be merged into master by a maintainer if:
-
-* It is passing CI.
-* It has been approved by at least two maintainers. If it was a maintainer who
-  opened the PR, only one extra approval is needed.
-* It has no requested changes.
-* It is up to date with current master.
-
-Any maintainer is allowed to merge a PR if all of these conditions are
-met.
-
-### Shipping a release (maintainers only)
-
-Maintainers need to do the following to push out a release:
-
-* Switch to the master branch and make sure it's up to date.
-* Make sure you have [chandler] properly configured. Chandler is used to
-  automatically submit github release notes from the changelog right after
-  pushing the gem to rubygems.
-* Run one of `bin/rake release:prepare_{prerelease,prepatch,patch,preminor,minor,premajor,major}`, push the result and create a PR.
-* Review and merge the PR. The generated changelog in the PR should include all user visible changes you intend to ship.
-* Run `bin/rake release` from the target branch once the PR is merged.
-
-[chandler]: https://github.com/mattbrictson/chandler#2-configure-credentials
-[Stack Overflow]: https://stackoverflow.com/questions/tagged/activeadmin
-[new issue]: https://github.com/activeadmin/activeadmin/issues/new
-[fork Active Admin]: https://help.github.com/articles/fork-a-repo
-[make a pull request]: https://help.github.com/articles/creating-a-pull-request
-[git rebasing]: https://git-scm.com/book/en/Git-Branching-Rebasing
-[interactive rebase]: https://help.github.com/en/github/using-git/about-git-rebase
-[shortcut reference links]: https://github.github.com/gfm/#shortcut-reference-link
-[Rollup]: https://rollupjs.org/guide/en/#quick-start
-[Yarn]: https://yarnpkg.com/en/docs/install
-[Node.js]: https://nodejs.org/en/
+[homepage]: https://www.contributor-covenant.org
