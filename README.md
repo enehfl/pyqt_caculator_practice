@@ -1,1 +1,4 @@
-# pyqt_caculator_practice
+# cacluator_practice
+PyQt5 based cacluator - Used for practice
+
+# Goals
